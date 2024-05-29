@@ -1,12 +1,12 @@
 <template>
   <div style="margin-top: 20px">
     <h2>通知 Notification</h2>
-    <n-space>
-      <n-button @click="notify('info')"> 信息 </n-button>
-      <n-button @click="notify('success')"> 成功 </n-button>
-      <n-button @click="notify('warning')"> 警告 </n-button>
-      <n-button @click="notify('error')"> 错误 </n-button>
-    </n-space>
+    <NSpace>
+      <NButton @click="notify('info')"> 信息 </NButton>
+      <NButton @click="notify('success')"> 成功 </NButton>
+      <NButton @click="notify('warning')"> 警告 </NButton>
+      <NButton @click="notify('error')"> 错误 </NButton>
+    </NSpace>
   </div>
 </template>
 

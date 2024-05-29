@@ -1,11 +1,12 @@
 <template>
   <div>
     <h2>对话框 Dialog</h2>
-    <n-space>
-    <n-button @click="handleConfirm"> 警告 </n-button>
-    <n-button @click="handleSuccess"> 成功 </n-button>
-    <n-button @click="handleError"> 错误 </n-button>
-  </n-space>
+    <NSpace>
+      <NButton @click="handleConfirm"> 警告 </NButton>
+      <NButton @click="handleSuccess"> 成功 </NButton>
+      <NButton @click="handleError"> 错误 </NButton>
+    </NSpace>
+    <MyNotification />
   </div>
 </template>
 

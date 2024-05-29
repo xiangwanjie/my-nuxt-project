@@ -1,21 +1,20 @@
 <template>
   <div style="margin-top: 20px">
     <h2>日历 Calendar</h2>
-    <n-calendar
-      v-model:value="value"
-      #="{ year, month, date }"
-      :is-date-disabled="isDateDisabled"
-      @update:value="handleUpdateValue">
-      {{ year }}-{{ month }}-{{ date }}
-    </n-calendar>
+    <div class="wrapper-box">
+      <NCalendar
+        v-model:value="value"
+        #="{ year, month, date }"
+        :is-date-disabled="isDateDisabled"
+        @update:value="handleUpdateValue">
+        {{ year }}-{{ month }}-{{ date }}
+      </NCalendar>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import { useMessage } from "naive-ui";
 import { isYesterday, addDays } from "date-fns/esm";
-
 export default defineComponent({
   setup() {
     const message = useMessage();
@@ -40,3 +39,8 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss" scoped>
+.wrapper-box {
+  width: 100%;
+}
+</style>
