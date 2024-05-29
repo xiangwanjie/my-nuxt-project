@@ -10,10 +10,6 @@
 </template>
 
 <script lang="ts" setup>
-// import MyDialog from "@/components/MyDialog.vue";
-// import MyNotification from "@/components/MyNotification.vue";
-// import MyCalendar from "@/components/MyCalendar.vue";
-
 const runtimeConfig = useRuntimeConfig();
 // console.log("runtimeConfig: ", runtimeConfig);
 // console.log("apiUrl: ", runtimeConfig.public.apiBase);
