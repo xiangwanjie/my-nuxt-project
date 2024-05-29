@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     NButton: typeof import('naive-ui')['NButton']
+    NCalendar: typeof import('naive-ui')['NCalendar']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
     NEllipsis: typeof import('naive-ui')['NEllipsis']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
