@@ -10,8 +10,11 @@
 
 <script setup lang="ts">
 interface IconProps {
+  // iconfont 名称
   name: string;
+  // iconfont 字体大小
   size?: number;
+  // iconfont 颜色
   color?: string;
 }
 const props = withDefaults(defineProps<IconProps>(), {
