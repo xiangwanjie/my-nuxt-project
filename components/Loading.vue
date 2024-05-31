@@ -33,6 +33,8 @@ interface IconProps {
   // 颜色
   color?: string;
 }
+
+// 默认值设置
 const props = withDefaults(defineProps<IconProps>(), {
   size: 20,
   color: "#E0AD36",
