@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   },
   modules: ["nuxtjs-naive-ui"],
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "@/styles/global.scss";`,
+        },
+      },
+    },
     plugins: [
       AutoImport({
         imports: [

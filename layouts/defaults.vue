@@ -1,12 +1,5 @@
 <template>
-  <NNotificationProvider>
-    <NMessageProvider>
-      <NDialogProvider>
-        <MyDialog />
-        <MyCalendar />
-      </NDialogProvider>
-    </NMessageProvider>
-  </NNotificationProvider>
+
 </template>
 
 <script lang="ts" setup>
