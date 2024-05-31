@@ -3,7 +3,7 @@
     <h3>Icon示例：</h3>
     <div class="icon-container">
       <Icon name="pingshenbaogao" />
-      <Icon name="loading" :size="iconSize" color="#E0AD36" />
+      <Icon name="loading" :size="100" color="#E0AD36" />
       <Icon name="jiantizhongwen" :size="iconSize" />
       <Icon name="fantizhongwen" :size="iconSize" />
       <Icon name="zhongyingwenqiehuan-xianshiyingwen" :size="iconSize" />
