@@ -1,5 +1,11 @@
 <template>
-  <i class="iconfont" :class="props.name ? 'icon-' + props.name : ''" :style="{'--size': props.size + 'px', '--color': props.color ? props.color : ''}"></i>
+  <i
+    class="iconfont"
+    :class="props.name ? 'icon-' + props.name : ''"
+    :style="{
+      '--size': props.size + 'px',
+      '--color': props.color ? props.color : '',
+    }"></i>
 </template>
 
 <script setup lang="ts">
@@ -9,13 +15,13 @@ interface IconProps {
   color?: string;
 }
 const props = withDefaults(defineProps<IconProps>(), {
-    size: 20
+  size: 20,
 });
 </script>
 <style lang="scss" scoped>
-@import '../assets/iconfont/iconfont.css';
-.iconfont{
-    font-size: var(--size);
-    color: var(--color, inherit);
+@import "../assets/iconfont/iconfont.css";
+.iconfont {
+  font-size: var(--size);
+  color: var(--color, inherit);
 }
 </style>
