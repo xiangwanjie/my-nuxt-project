@@ -42,5 +42,5 @@ export default defineNuxtConfig({
         dts: "types/components.d.ts", // 可选：自动生成 TypeScript 类型声明
       }),
     ],
-  },
+  }
 });

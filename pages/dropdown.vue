@@ -3,16 +3,18 @@
     <h3>Icon示例：</h3>
     <div class="icon-container">
       <Icon name="pingshenbaogao" />
-      <Icon name="loading" :size="100" color="#E0AD36" />
+      <Icon name="loading" :size="iconSize" color="#E0AD36" />
       <Icon name="jiantizhongwen" :size="iconSize" />
       <Icon name="fantizhongwen" :size="iconSize" />
       <Icon name="zhongyingwenqiehuan-xianshiyingwen" :size="iconSize" />
     </div>
 
     <h3 style="margin-top: 30px">下拉菜单</h3>
-    <n-dropdown :options="options">
-      <n-button>用户资料</n-button>
-    </n-dropdown>
+    <div class="dropdown-container">
+      <n-dropdown :options="options" :style="{ '--n-space': '20px' }">
+        <n-button>用户资料</n-button>
+      </n-dropdown>
+    </div>
   </div>
 </template>
 
@@ -56,9 +58,14 @@ const options = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  .icon-container{
+  .icon-container {
     display: flex;
     gap: 10px;
   }
+}
+</style>
+<style>
+.n-popover-shared {
+  margin-top: 15px !important;
 }
 </style>
