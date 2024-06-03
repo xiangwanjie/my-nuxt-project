@@ -1,10 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 使用Demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[Nuxt 3 文档](https://nuxt.com/docs/getting-started/introduction) 
 
-## Setup
+## 安装依赖
 
-Make sure to install the dependencies:
+确保安装依赖项:
 
 ```bash
 # npm
@@ -12,64 +12,32 @@ npm install
 
 # pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## 本地启动
 
-Start the development server on `http://localhost:3000`:
+本地访问 `http://localhost:3000`:
 
 ```bash
-# npm
+# 本地-启动-开发环境
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# 本地-启动-测试环境
+npm run test
+# 本地-启动-生产环境
+npm run prod
 ```
 
-## Production
+## 打包
 
-Build the application for production:
+构建生产应用程序:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# 打包-开发环境
+npm run build:dev
+# 打包-测试环境
+npm run build:test
+# 打包-生产环境
+npm run build:prod
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+查看 [部署相关文档](https://nuxt.com/docs/getting-started/deployment) 以获取更多信息.
