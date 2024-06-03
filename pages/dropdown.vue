@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h3>Icon示例：</h3>
+    <p style="color: red;">{{ $t('welcome') }}</p>
     <div class="icon-container">
       <Icon name="pingshenbaogao" />
       <Icon name="loading" :size="iconSize" color="#E0AD36" />
@@ -8,49 +9,13 @@
       <Icon name="fantizhongwen" :size="iconSize" />
       <Icon name="zhongyingwenqiehuan-xianshiyingwen" :size="iconSize" />
     </div>
-
-    <h3 style="margin-top: 30px">下拉菜单</h3>
-    <div class="dropdown-container">
-      <n-dropdown :options="options" :style="{ '--n-space': '20px' }">
-        <n-button>用户资料</n-button>
-      </n-dropdown>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { h } from "vue";
-import { NDropdown, NButton } from "naive-ui";
 import Icon from "@/components/Icon.vue";
 
 const iconSize = 30;
-
-const renderIcon = (name: string) => {
-  return () => {
-    return h(Icon, {
-      name,
-      size: 20,
-    });
-  };
-};
-
-const options = [
-  {
-    label: "中文",
-    key: "profile",
-    icon: renderIcon("jiantizhongwen"),
-  },
-  {
-    label: "繁体",
-    key: "editProfile",
-    icon: renderIcon("fantizhongwen"),
-  },
-  {
-    label: "English",
-    key: "logout",
-    icon: renderIcon("zhongyingwenqiehuan-xianshiyingwen"),
-  },
-];
 </script>
 
 <style scoped lang="scss">
@@ -62,10 +27,5 @@ const options = [
     display: flex;
     gap: 10px;
   }
-}
-</style>
-<style>
-.n-popover-shared {
-  margin-top: 15px !important;
 }
 </style>

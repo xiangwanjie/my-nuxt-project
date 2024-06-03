@@ -10,10 +10,16 @@ export default defineNuxtConfig({
     textxiaojie: "小杰",
     // 暴露给客户端使用
     public: {
-      apiBase: process.env.NUXT_API_BASE || "http://localhost:3000",
+      apiBase1: process.env.NUXT_API_BASE1 || "http://localhost:3000",
+      apiBase2: process.env.NUXT_API_BASE2 || "http://localhost:3000",
+      apiBase3: process.env.NUXT_API_BASE3 || "http://localhost:3000",
+      apiBase4: process.env.NUXT_API_BASE4 || "http://localhost:3000",
     },
   },
-  modules: ["nuxtjs-naive-ui"],
+  modules: [
+    "nuxtjs-naive-ui",
+    "@nuxtjs/i18n"
+  ],
   vite: {
     css: {
       preprocessorOptions: {
@@ -42,5 +48,23 @@ export default defineNuxtConfig({
         dts: "types/components.d.ts", // 可选：自动生成 TypeScript 类型声明
       }),
     ],
-  }
+  },
+  // 国际化配置
+  i18n: {
+    locales: [
+      {
+        code: "zhCN",
+      },
+      {
+        code: "zhTW",
+      },
+      {
+        code: "enUS",
+      },
+    ],
+    defaultLocale: "zhCN",
+    customRoutes: "page",
+    strategy: "prefix_except_default",
+    vueI18n: "./i18n.config.ts", // if you are using custom path, default
+  },
 });

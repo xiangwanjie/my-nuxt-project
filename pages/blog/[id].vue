@@ -1,6 +1,7 @@
 <template>
     <div>
         {{ id }} - {{ $route.query.name ?? "" }}
+        <p style="color: red;">{{ $t("newsTitle") }}</p>
     </div>
 </template>
 

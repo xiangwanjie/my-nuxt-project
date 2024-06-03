@@ -1,18 +1,8 @@
 <template>
   <div>
-    <h2>首页</h2>
-    <NNotificationProvider>
-      <NMessageProvider>
-        <NDialogProvider>
-          <MyDialog />
-          <MyCalendar />
-        </NDialogProvider>
-      </NMessageProvider>
-    </NNotificationProvider>
+    <h1>欢迎来到首页</h1>
+    <p style="color: red;">{{ $t('homeTitle') }}</p>
+    <MyDialog />
+    <MyCalendar />
   </div>
 </template>
-
-<script setup lang="ts">
-</script>
-
-<style scoped></style>
