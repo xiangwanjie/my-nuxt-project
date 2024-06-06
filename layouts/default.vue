@@ -66,9 +66,9 @@ const options = [
   },
 ];
 
-const cacheLang = window?.localStorage.getItem("lang");
-console.log("cacheLang: ", cacheLang)
-const LANGUAGE = ref(cacheLang ?? "zhCN");
+// const cacheLang = window?.localStorage.getItem("lang");
+// console.log("cacheLang: ", cacheLang)
+const LANGUAGE = ref("zhCN");
 const LANGUAGE_ENUM: any = {
   enUS: [enUS, dateEnUS],
   zhCN: [zhCN, dateZhCN],
@@ -83,7 +83,7 @@ const currentLangText = computed(() => {
   return options.find((item: any) => item.key === LANGUAGE.value)?.label;
 });
 
-const { setLocale } = useI18n();
+const { locale, setLocale } = useI18n();
 setLocale(LANGUAGE.value);
 
 const handleSelect = (key: string) => {
@@ -91,7 +91,7 @@ const handleSelect = (key: string) => {
   // const lang: any = LANGUAGE_ENUM[key as keyof typeof LANGUAGE_ENUM];
   LANGUAGE.value = key;
   setLocale(key);
-  window.localStorage.setItem("lang", key);
+  // window.localStorage.setItem("lang", key);
 };
 </script>
 

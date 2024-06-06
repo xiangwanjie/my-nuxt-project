@@ -17,8 +17,8 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "nuxtjs-naive-ui",
-    "@nuxtjs/i18n"
+    "@nuxtjs/i18n",
+    "nuxtjs-naive-ui"
   ],
   vite: {
     css: {
