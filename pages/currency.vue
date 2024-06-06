@@ -43,18 +43,19 @@ const currency: any = {
   AUD4String: "112.2002",
 };
 
+const icons =  importIcons();
 const iconEnum: { [key: string]: string} = {
-    EGP: importIcons("EGP"),
-    BTC: importIcons("BTC"),
-    ETH: importIcons("ETH"),
-    HKD: importIcons("HKD"),
-    USD: importIcons("USD"),
-    CNY: importIcons("CNY"),
-    MOP: importIcons("MOP"),
-    EUR: importIcons("EUR"),
-    GBP: importIcons("GBP"),
-    JPY: importIcons("JPY"),
-    AUD: importIcons("AUD"),
+    EGP: icons["EGP.png"],
+    BTC: icons["BTC.png"],
+    ETH: icons["ETH.png"],
+    HKD: icons["HKD.png"],
+    USD: icons["USD.png"],
+    CNY: icons["CNY.png"],
+    MOP: icons["MOP.png"],
+    EUR: icons["EUR.png"],
+    GBP: icons["GBP.png"],
+    JPY: icons["JPY.png"],
+    AUD: icons["AUD.png"]
 }
 
 
