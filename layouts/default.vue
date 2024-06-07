@@ -4,18 +4,11 @@
       <NNotificationProvider>
         <NMessageProvider>
           <NDialogProvider>
-            <div class="dropdown-container">
-              <div @click="handleSelect('zhCN')">中文</div>
-              <div @click="handleSelect('zhTW')">繁体</div>
-              <div @click="handleSelect('enUS')">英文</div>
-              <n-dropdown
-                :options="options"
-                :style="{ '--n-space': '20px' }"
-                @select="handleSelect">
-                <n-button>{{ currentLangText }}</n-button>
-              </n-dropdown>
+           <AppHeader>
+            <div>
+              <slot></slot>
             </div>
-            <div class="solt"><slot></slot></div>
+           </AppHeader>
           </NDialogProvider>
         </NMessageProvider>
       </NNotificationProvider>
@@ -35,64 +28,16 @@ import {
   zhTW,
   dateZhTW,
 } from "naive-ui";
-import { h } from "vue";
-import { NDropdown, NButton } from "naive-ui";
-import Icon from "@/components/Icon.vue";
 
-const renderIcon = (name: string) => {
-  return () => {
-    return h(Icon, {
-      name,
-      size: 20,
-    });
-  };
-};
-
-const options = [
-  {
-    label: "中文",
-    key: "zhCN",
-    icon: renderIcon("jiantizhongwen"),
-  },
-  {
-    label: "繁体",
-    key: "zhTW",
-    icon: renderIcon("fantizhongwen"),
-  },
-  {
-    label: "English",
-    key: "enUS",
-    icon: renderIcon("zhongyingwenqiehuan-xianshiyingwen"),
-  },
-];
-
-// const cacheLang = window?.localStorage.getItem("lang");
-// console.log("cacheLang: ", cacheLang)
-const LANGUAGE = ref("zhCN");
+const { locale } = useI18n();
 const LANGUAGE_ENUM: any = {
   enUS: [enUS, dateEnUS],
   zhCN: [zhCN, dateZhCN],
   zhTW: [zhTW, dateZhTW]
 };
-
 const currentLang = computed(() => {
-  return LANGUAGE_ENUM[LANGUAGE.value];
+  return LANGUAGE_ENUM[locale.value];
 });
-
-const currentLangText = computed(() => {
-  return options.find((item: any) => item.key === LANGUAGE.value)?.label;
-});
-
-const { locale, setLocale } = useI18n();
-setLocale(LANGUAGE.value);
-
-const handleSelect = (key: string) => {
-  // debugger
-  // const lang: any = LANGUAGE_ENUM[key as keyof typeof LANGUAGE_ENUM];
-  LANGUAGE.value = key;
-  setLocale(key);
-  // window.localStorage.setItem("lang", key);
-};
 </script>
 
 <style>
