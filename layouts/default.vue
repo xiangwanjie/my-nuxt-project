@@ -4,11 +4,8 @@
       <NNotificationProvider>
         <NMessageProvider>
           <NDialogProvider>
-           <AppHeader>
-            <div>
-              <slot></slot>
-            </div>
-           </AppHeader>
+            <AppHeader />
+            <slot />
           </NDialogProvider>
         </NMessageProvider>
       </NNotificationProvider>
@@ -33,9 +30,10 @@ const { locale } = useI18n();
 const LANGUAGE_ENUM: any = {
   enUS: [enUS, dateEnUS],
   zhCN: [zhCN, dateZhCN],
-  zhTW: [zhTW, dateZhTW]
+  zhTW: [zhTW, dateZhTW],
 };
 const currentLang = computed(() => {
+  console.log('[ locale ] >', locale.value)
   return LANGUAGE_ENUM[locale.value];
 });
 </script>
