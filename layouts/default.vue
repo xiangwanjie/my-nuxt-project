@@ -5,7 +5,10 @@
         <NMessageProvider>
           <NDialogProvider>
             <AppHeader />
-            <slot />
+            <KeepAlive>
+              <NuxtPage />
+            </KeepAlive>
+            <!-- <slot /> -->
           </NDialogProvider>
         </NMessageProvider>
       </NNotificationProvider>
@@ -33,7 +36,7 @@ const LANGUAGE_ENUM: any = {
   zhTW: [zhTW, dateZhTW],
 };
 const currentLang = computed(() => {
-  console.log('[ locale ] >', locale.value)
+  console.log("[ locale ] >", locale.value);
   return LANGUAGE_ENUM[locale.value];
 });
 </script>

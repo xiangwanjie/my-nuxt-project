@@ -12,6 +12,13 @@ const id = route.params.id
 console.log("route: ", route);
 console.log("locale: ", locale.value)
 
+// definePageMeta({
+//   validate: async (route: any) => {
+//     // 检查id是否由数字组成
+//     return /^\d+$/.test(route.params.id)
+//   }
+// })
+
 </script>
 
 <style scoped>
