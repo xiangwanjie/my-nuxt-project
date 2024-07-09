@@ -5,10 +5,7 @@
         <NMessageProvider>
           <NDialogProvider>
             <AppHeader />
-            <KeepAlive>
-              <NuxtPage />
-            </KeepAlive>
-            <!-- <slot /> -->
+            <slot />
           </NDialogProvider>
         </NMessageProvider>
       </NNotificationProvider>
@@ -17,6 +14,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
+// import { useRoute } from "vue-router"
 import {
   NMessageProvider,
   NDialogProvider,
@@ -39,6 +38,10 @@ const currentLang = computed(() => {
   console.log("[ locale ] >", locale.value);
   return LANGUAGE_ENUM[locale.value];
 });
+
+// const keepAliveName = ["/list"]
+// const route = useRoute();
+// console.log('[ route ] >', route)
 </script>
 
 <style>
