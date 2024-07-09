@@ -14,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import{NPagination,NButton} from "naive-ui"
 
 const pageIndex = ref(1);
 
@@ -21,7 +22,7 @@ const pageIndex = ref(1);
 const listData = ref<any>([]);
 
 const loadData = () => {
-  listData.value = new Array(100).fill(0).map((item, index) => {
+  listData.value = new Array(50).fill(0).map((item, index) => {
     return { name: `名称${index + 1}`, id: index };
   });
 };

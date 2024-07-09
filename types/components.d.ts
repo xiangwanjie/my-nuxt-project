@@ -7,18 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    NAlert: typeof import('naive-ui')['NAlert']
-    NButton: typeof import('naive-ui')['NButton']
-    NCalendar: typeof import('naive-ui')['NCalendar']
-    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NDatePicker: typeof import('naive-ui')['NDatePicker']
-    NDialogProvider: typeof import('naive-ui')['NDialogProvider']
-    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    NModalProvider: typeof import('naive-ui')['NModalProvider']
-    NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
-    NPagination: typeof import('naive-ui')['NPagination']
-    NSpace: typeof import('naive-ui')['NSpace']
-    NSpin: typeof import('naive-ui')['NSpin']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
