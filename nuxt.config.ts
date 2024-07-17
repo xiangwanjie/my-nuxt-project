@@ -18,7 +18,9 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/i18n",
-    "nuxtjs-naive-ui"
+    "nuxtjs-naive-ui",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
   ],
   vite: {
     css: {

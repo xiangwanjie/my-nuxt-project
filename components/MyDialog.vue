@@ -1,6 +1,9 @@
 <template>
   <div>
     <h2>对话框 Dialog</h2>
+    <ClientOnly>
+      <p>子组件获取用户名：{{ userInfo.name }}</p>
+    </ClientOnly>
     <NSpace>
       <NButton @click="handleConfirm"> 警告 </NButton>
       <NButton @click="handleSuccess"> 成功 </NButton>
@@ -13,6 +16,16 @@
 <script setup lang="ts">
 const message = useMessage();
 const dialog = useDialog();
+import { storeToRefs } from 'pinia';
+import { useUserStore } from '~/stores/modules/user';
+
+
+const userStore = useUserStore();
+const { userInfo } = storeToRefs(userStore);
+
+onMounted(() => {
+  userStore.getUserInfo();
+})
 
 const handleConfirm = () => {
   dialog.warning({

