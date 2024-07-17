@@ -16,16 +16,15 @@
 <script setup lang="ts">
 const message = useMessage();
 const dialog = useDialog();
-import { storeToRefs } from 'pinia';
-import { useUserStore } from '~/stores/modules/user';
-
+import { storeToRefs } from "pinia";
+import { useUserStore } from "@/stores/modules/user";
 
 const userStore = useUserStore();
 const { userInfo } = storeToRefs(userStore);
 
 onMounted(() => {
   userStore.getUserInfo();
-})
+});
 
 const handleConfirm = () => {
   dialog.warning({
