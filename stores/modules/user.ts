@@ -11,6 +11,7 @@ export const useUserStore = defineStore("user-store", {
   },
   actions: {
     getUserInfo() {
+      // 判断是否为客户端，获取 localStorage 中的 userInfo，存在直接返回
       if(process.client) {
         const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}")
         if(userInfo.name) {
